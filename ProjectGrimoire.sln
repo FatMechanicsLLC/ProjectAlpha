@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GrimoireCharacterCreator", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GrimoireSolver", "GrimoireSolver\GrimoireSolver.vcxproj", "{0B7711A3-A6F4-4026-B1FF-89ADB322564E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GrimoireCharacter", "GrimoireCharacter\GrimoireCharacter.vcxproj", "{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -59,6 +61,18 @@ Global
 		{0B7711A3-A6F4-4026-B1FF-89ADB322564E}.Release|x64.Build.0 = Release|x64
 		{0B7711A3-A6F4-4026-B1FF-89ADB322564E}.Release|x86.ActiveCfg = Release|Win32
 		{0B7711A3-A6F4-4026-B1FF-89ADB322564E}.Release|x86.Build.0 = Release|Win32
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Debug|ARM.Build.0 = Debug|ARM
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Debug|x64.ActiveCfg = Debug|x64
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Debug|x64.Build.0 = Debug|x64
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Debug|x86.ActiveCfg = Debug|Win32
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Debug|x86.Build.0 = Debug|Win32
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Release|ARM.ActiveCfg = Release|ARM
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Release|ARM.Build.0 = Release|ARM
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Release|x64.ActiveCfg = Release|x64
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Release|x64.Build.0 = Release|x64
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Release|x86.ActiveCfg = Release|Win32
+		{C3A2F342-AF1C-4891-B6C2-D8E6A2FA7282}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
