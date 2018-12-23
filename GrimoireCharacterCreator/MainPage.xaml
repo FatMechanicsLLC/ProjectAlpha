@@ -9,6 +9,18 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <RelativePanel HorizontalAlignment="Left" Height="480" Margin="155,115,0,0" VerticalAlignment="Top" Width="1015">
+            <TextBlock x:Name="TitleBar" FontWeight="ExtraBold" FontStretch="Expanded" FontSize="45" FontStyle="Oblique" TextAlignment="Center" HorizontalAlignment="Left" Height="170" Margin="110,50,0,0" Text="The Grimoire of Arduin" VerticalAlignment="Top" Width="810"/>
+            <StackPanel x:Name="ButtonPanel" Spacing="10" Orientation="Horizontal" BorderBrush="Red" BorderThickness="2" CornerRadius="10" Padding="12" HorizontalAlignment="Left" Height="100" Margin="293,300,0,0" VerticalAlignment="Top" Width="480">
+                <HyperlinkButton x:Name="CreateButton" Content="Go to Create"  BorderBrush="Red" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                    <HyperlinkButton.ContentTemplate>
+                        <DataTemplate>
+                            <TextBlock x:Name="CreateButtonText" Text="Create Character" />
+                        </DataTemplate>
+                    </HyperlinkButton.ContentTemplate>
+                </HyperlinkButton>
+                <Button x:Name="ExitButton" Content="Exit" BorderBrush="Red" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </StackPanel>
+        </RelativePanel>
     </Grid>
 </Page>
