@@ -26,5 +26,11 @@ namespace GrimoireCharacterCreator
         {
             this.InitializeComponent();
         }
+
+        private async void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
+
 }
