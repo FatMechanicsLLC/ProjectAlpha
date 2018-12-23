@@ -1,12 +1,11 @@
 #pragma once
 
 
-#pragma once
 
 //**************************************************************************************************
 //
 //	Author: Matthew Altman
-//	Date:	12/21/2018
+//	Date:	12/22/2018
 //
 //	Object for encapsulating character resistance attributes
 //
@@ -38,17 +37,19 @@ protected:
 
 	// Generic Methods
 	void	SetResistanceAttribute(eResistance _eResist, int _iVal);
-	int		GetResistanceAttribute(eResistance _eResist);
 
-	// Get Methods
-	inline int		GetFireResistance() { return m_iFire; }
-	inline int		GetColdResistance() { return m_iCold; }
-	inline int		GetMagicResistance() { return m_iMagic; }
-	inline int		GetAcidResistance() { return m_iAcid; }
 
 public:
 	CResistanceAttributes() {}
 	virtual ~CResistanceAttributes() {}
+
+	int		GetResistanceAttribute(eResistance _eResist) const;
+
+	// Get Methods
+	inline int		GetFireResistance() const { return m_iFire; }
+	inline int		GetColdResistance() const { return m_iCold; }
+	inline int		GetMagicResistance() const { return m_iMagic; }
+	inline int		GetAcidResistance() const { return m_iAcid; }
 };
 
 void CResistanceAttributes::SetResistanceAttribute(eResistance _eResist, int _iVal)
@@ -71,7 +72,7 @@ void CResistanceAttributes::SetResistanceAttribute(eResistance _eResist, int _iV
 	}
 }
 
-int CResistanceAttributes::GetResistanceAttribute(eResistance _eResist)
+int CResistanceAttributes::GetResistanceAttribute(eResistance _eResist) const 
 {
 	switch (_eResist) {
 	case eResistanceFire:

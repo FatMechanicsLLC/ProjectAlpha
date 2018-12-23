@@ -11,6 +11,7 @@
 #include "CExperience.h"
 #include "CSocialAttributes.h"
 #include "CResistanceAttributes.h"
+#include "CMovementAttributes.h"
 
 
 
@@ -26,7 +27,7 @@ private:
 	CAttributes				m_CoreAttributes;
 	CWealth					m_Wealth;
 	CHealth					m_Health;
-
+	CMovementAttributes		m_Movement;
 	CExperience				m_Experience;
 	CMagicAttributes		m_MagicAttributes;
 	CCombatAttributes		m_CombatAttributes;

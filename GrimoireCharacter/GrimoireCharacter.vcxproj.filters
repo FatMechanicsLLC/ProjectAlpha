@@ -57,5 +57,8 @@
     <ClInclude Include="CResistanceAttributes.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="CMovementAttributes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

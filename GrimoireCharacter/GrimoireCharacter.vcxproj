@@ -195,6 +195,7 @@
     <ClInclude Include="CExperience.h" />
     <ClInclude Include="CHealth.h" />
     <ClInclude Include="CMagicAttributes.h" />
+    <ClInclude Include="CMovementAttributes.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="CPhysicalTraits.h" />
     <ClInclude Include="CResistanceAttributes.h" />
