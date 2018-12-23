@@ -197,6 +197,7 @@
     <ClInclude Include="CMagicAttributes.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="CPhysicalTraits.h" />
+    <ClInclude Include="CResistanceAttributes.h" />
     <ClInclude Include="CSocialAttributes.h" />
     <ClInclude Include="CWealth.h" />
     <ClInclude Include="pch.h" />

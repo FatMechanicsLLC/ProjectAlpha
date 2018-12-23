@@ -136,5 +136,16 @@ typedef enum _eAlignments
 	eAlignmentMax
 }eAlignment;
 
+typedef enum _eResistance
+{
+	eResistanceIllegal = -1,
+
+	eResistanceFire,
+	eResistanecCold,
+	eResistanceAcid,
+	eResistanceMagic,
+
+	eResistanceMax
+} eResistance;
 
 

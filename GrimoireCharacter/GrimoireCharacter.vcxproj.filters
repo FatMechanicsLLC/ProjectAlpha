@@ -54,5 +54,8 @@
     <ClInclude Include="CWealth.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="CResistanceAttributes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
