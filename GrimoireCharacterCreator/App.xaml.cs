@@ -30,7 +30,7 @@ namespace GrimoireCharacterCreator
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-        }
+          }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -54,6 +54,7 @@ namespace GrimoireCharacterCreator
                 {
                     //TODO: Load state from previously suspended application
                 }
+
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;

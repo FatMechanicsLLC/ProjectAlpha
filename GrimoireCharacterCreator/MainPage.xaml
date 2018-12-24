@@ -12,13 +12,13 @@
         <ScrollViewer VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto" >
             <Grid>
 
-                <RelativePanel HorizontalAlignment="Left" Height="700" Margin="-30,0,0,0" VerticalAlignment="Center" Width="1300">
-                    <Border BorderBrush="Black" HorizontalAlignment="Left" Height="539" VerticalAlignment="Top" Width="1289" Margin="10,76,0,0">
+                <RelativePanel HorizontalAlignment="Left" Height="700" Margin="-30,0,0,0" VerticalAlignment="Center" Width="1280">
+                    <Border BorderBrush="Black" HorizontalAlignment="Left" Height="539" VerticalAlignment="Top" Width="1280" Margin="10,76,0,0">
                         <Image x:Name="Background" Source="Assets/Backgrounds/arduin_ad.jpg" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
                     </Border>
                     <TextBlock x:Name="TitleBar" Foreground="Red" FontWeight="ExtraBold" FontStretch="Expanded" FontSize="45" FontStyle="Oblique" TextAlignment="Center" HorizontalAlignment="Left" Height="170" Margin="392,-8,0,0" VerticalAlignment="Top" Width="552"><Run Text="The Grimoire of Arduin"/><LineBreak/><Run Text="Character Creator"/></TextBlock>
                     <StackPanel x:Name="ButtonPanel" Background="White"  Spacing="40" Orientation="Horizontal" BorderBrush="Red" BorderThickness="2" CornerRadius="10" Padding="18" HorizontalAlignment="Left" Height="100" Margin="429,590,0,0" VerticalAlignment="Top" Width="480">
-                        <HyperlinkButton x:Name="CreateButton" Content="Go to Create" Width="200" BorderBrush="Red" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                        <HyperlinkButton x:Name="CreateButton" Content="Go to Create" Click="CreateCharacter_Click" Width="200" BorderBrush="Red" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                             <HyperlinkButton.ContentTemplate>
                                 <DataTemplate>
                                     <TextBlock x:Name="CreateButtonText" Text="Create Character" />
