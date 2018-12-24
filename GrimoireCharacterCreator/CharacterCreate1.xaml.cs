@@ -34,5 +34,6 @@ namespace GrimoireCharacterCreator
         {
             Frame.Navigate(typeof(MainPage));
         }
+
     }
 }
