@@ -49,20 +49,26 @@
                         </StackPanel>
                         <StackPanel x:Name="InputBoxes" Height="500" Width="135" Margin="155,50,0,0">
                             <TextBox x:Name="NameBox" Text="Default Name" TextAlignment="Center" HorizontalTextAlignment="Center" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0" />
-                            <ComboBox x:Name="RaceBox" PlaceholderText="Select Race" PlaceholderForeground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0">
+           <!--                 <ListBox x:Name="RaceBox" Height="50" Width="140" Margin="0,10,0,0">
+                                <ListBoxItem x:Name="RaceBox_Elf" Content="Elf" />
+                                <ListBoxItem x:Name="RaceBox_Human" Content="Human" />
+                                <ListBoxItem x:Name="RaceBox_Dwarf" Content="Dwarf" />
+                            </ListBox> -->
+                           <ComboBox x:Name="RaceBox" PlaceholderText="Select Race" PlaceholderForeground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0">
                                 <ComboBoxItem x:Name="RaceBox_Elf" Content="Elf" />
                                 <ComboBoxItem x:Name="RaceBox_Human" Content="Human" />
                                 <ComboBoxItem x:Name="RaceBox_Dwarf" Content="Dwarf" />
-                            </ComboBox>
-                            <ComboBox x:Name="SexBox" PlaceholderText="Select Race" PlaceholderForeground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0">
-                                <ComboBoxItem x:Name="SexBox_Male" Content="Male" />
+                            </ComboBox>  
+                            <ComboBox x:Name="SexBox" PlaceholderText="Select Sex" SelectionChanged="SexBox_SelectionChanged" PlaceholderForeground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0">
+                         <!--       <ComboBoxItem x:Name="SexBox_Male" Content="Male" />
                                 <ComboBoxItem x:Name="SexBox_Female" Content="Female" />
-                                <ComboBoxItem x:Name="SexBox_Other" Content="Other" />
+                                <ComboBoxItem x:Name="SexBox_Both" Content="Both" />
+                                <ComboBoxItem x:Name="SexBox_Other" Content="Other" />      -->
                             </ComboBox>
-                            <ComboBox x:Name="ClassBox" PlaceholderText="Select Class" PlaceholderForeground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0">
-                                <ComboBoxItem x:Name="ClassBox_Fighter" Content="Fighter" />
+                            <ComboBox x:Name="ClassBox" PlaceholderText="Select Class" SelectionChanged="ClassBox_SelectionChanged" PlaceholderForeground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0">
+                          <!--      <ComboBoxItem x:Name="ClassBox_Fighter" Content="Fighter" />
                                 <ComboBoxItem x:Name="ClassBox_Mage" Content="Mage" />
-                                <ComboBoxItem x:Name="ClassBox_Wizard" Content="Wizard" />
+                                <ComboBoxItem x:Name="ClassBox_Wizard" Content="Wizard" />    -->
                             </ComboBox>
                         </StackPanel>
                     </RelativePanel>

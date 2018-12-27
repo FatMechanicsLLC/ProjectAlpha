@@ -45,9 +45,6 @@
     <ClInclude Include="Common.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="CPhysicalTraits.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="CSocialAttributes.h">
       <Filter>Headers</Filter>
     </ClInclude>
@@ -58,6 +55,15 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="CMovementAttributes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassTypes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CPhysicalAttributes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="RaceTypes.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

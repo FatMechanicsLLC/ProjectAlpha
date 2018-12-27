@@ -119,7 +119,7 @@ typedef enum _eFootType
 } eFootType;
 
 
-class CPhysicalTraits
+class CPhysicalAttributes
 {
 	friend CCharacter;
 
@@ -158,8 +158,8 @@ protected:
 	void	SetLifeSpan(float _fLifeSpan) { m_fLifeSpan = _fLifeSpan; }
 
 public:
-	CPhysicalTraits() {}
-	virtual ~CPhysicalTraits() {}
+	CPhysicalAttributes() {}
+	virtual ~CPhysicalAttributes() {}
 
 	float	GetHeight() const { return m_fHeight; }
 	float	GetWeight()	const { return m_fWeight; }

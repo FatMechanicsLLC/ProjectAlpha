@@ -3,7 +3,7 @@
 #include "pch.h"
 #include "Common.h"
 #include "CAttributes.h"
-#include "CPhysicalTraits.h"
+#include "CPhysicalAttributes.h"
 #include "CWealth.h"
 #include "CHealth.h"
 #include "CCombatAttributes.h"
@@ -23,7 +23,7 @@ private:
 	eAlignment				m_eAlignment;
 	eClassType				m_eClass;
 
-	CPhysicalTraits			m_PhysicalTraits;
+	CPhysicalAttributes		m_PhysicalTraits;
 	CAttributes				m_CoreAttributes;
 	CWealth					m_Wealth;
 	CHealth					m_Health;

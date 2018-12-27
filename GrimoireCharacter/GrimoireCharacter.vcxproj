@@ -194,14 +194,16 @@
     <ClInclude Include="CCombatAttributes.h" />
     <ClInclude Include="CExperience.h" />
     <ClInclude Include="CHealth.h" />
+    <ClInclude Include="ClassTypes.h" />
     <ClInclude Include="CMagicAttributes.h" />
     <ClInclude Include="CMovementAttributes.h" />
     <ClInclude Include="Common.h" />
-    <ClInclude Include="CPhysicalTraits.h" />
+    <ClInclude Include="CPhysicalAttributes.h" />
     <ClInclude Include="CResistanceAttributes.h" />
     <ClInclude Include="CSocialAttributes.h" />
     <ClInclude Include="CWealth.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="RaceTypes.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
