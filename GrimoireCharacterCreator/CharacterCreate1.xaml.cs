@@ -164,6 +164,8 @@ namespace GrimoireCharacterCreator
             ClassBox.Items.Add("Sage");
             ClassBox.Items.Add("Witch Hunter");
             ClassBox.Items.Add("Paladin");
+
+            //ClassBox.SelectedIndex = 0;
         }
 
     }

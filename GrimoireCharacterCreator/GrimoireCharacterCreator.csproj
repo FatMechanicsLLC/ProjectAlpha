@@ -116,6 +116,7 @@
     <Content Include="Assets\Backgrounds\arduin_ad.jpg" />
     <Content Include="Assets\Backgrounds\Arduin_wiz.jpg" />
     <Content Include="Assets\Backgrounds\Ardui_mage.jpg" />
+    <Content Include="Assets\Icons\Icon4_64.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -151,6 +152,9 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.1.9</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

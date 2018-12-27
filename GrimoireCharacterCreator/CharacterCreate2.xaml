@@ -40,19 +40,18 @@
                     </RelativePanel>
                     <RelativePanel x:Name="AttributeBox" Height="600" Width="300" VerticalAlignment="Center" HorizontalAlignment="right"  Margin="80,50,0,0">
                         <Rectangle x:Name="AttributeBoxBackground" Height="600" Width="300" Fill="Black" />
-                        <StackPanel x:Name="Labels" Height="500" Width="135" Margin="10,50,0,0">
-                            <TextBlock x:Name="NameLabel" Text="Name" FontSize="32" Foreground="White"  Height="50" Width="135" Margin="0,10,0,0" />
-                            <TextBlock x:Name="RaceLabel" Text="Race" FontSize="32" Foreground="White"  Height="50" Width="135" Margin="0,10,0,0" />
-                            <TextBlock x:Name="SexLabel" Text="Sex" FontSize="32" Foreground="White"  Height="50" Width="135" Margin="0,10,0,0" />
-                            <TextBlock x:Name="ClassLabel" Text="Class" FontSize="32" Foreground="White"  Height="50" Width="135" Margin="0,10,0,0" />
-                        </StackPanel>
-                        <StackPanel x:Name="InputBoxes" Height="500" Width="135" Margin="155,50,0,0">
-                            <TextBox x:Name="NameBox" Text="Default Name" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0" />
-                            <TextBox x:Name="RaceBox" Text="Default Race" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0" />
-                            <TextBox x:Name="SexBox" Text="Default Sex" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0" />
-                            <TextBox x:Name="ClassBox" Text="Default Class" HorizontalAlignment="Left" VerticalAlignment="Center" Height="50" Width="140" Margin="0,10,0,0" />
-                        </StackPanel>
-
+                        <Grid x:Name="AttributesGrid" Margin="30,30,0,0" RowSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="60"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="Strength" Text="Default" ></TextBlock>
+                        </Grid>
                     </RelativePanel>
                 </RelativePanel>
             </Grid>
