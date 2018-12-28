@@ -117,13 +117,14 @@
                         <Rectangle x:Name="AttributeBoxBackground" Height="600" Width="300" Fill="Black" />
                         <Grid x:Name="AttributesGrid" Margin="30,30,0,0" RowSpacing="10">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="40"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="32"/>
-                                <RowDefinition Height="32"/>
+              <!--              <RowDefinition Height="32"/>
+                                <RowDefinition Height="32"/>  -->
                             </Grid.RowDefinitions>
                         </Grid>
                         <Button Style="{StaticResource ReRollButton}" x:Name="ReRoll" Content="ReRoll" Click="Button_ReRoll_Clock" PointerEntered="InFocus" PointerExited="OutFocus"

@@ -26,6 +26,7 @@ namespace GrimoireCharacterCreator
         Random Rand = new Random();
 
         TextBlock[] AttribVals = new TextBlock[10];
+        Button[] ReRollButtons = new Button[10];
 
         string[] AttributeStrings = 
         {
@@ -86,7 +87,7 @@ namespace GrimoireCharacterCreator
         }
         private int RollD6()
         {
-            return Rand.Next(1, 6);
+            return Rand.Next(1, 7);
         }
         private int RollD4()
         {
@@ -276,12 +277,23 @@ namespace GrimoireCharacterCreator
                 Grid.SetRow(Pic, x);
                 Pic.HorizontalAlignment = HorizontalAlignment.Left;
                 AttributesGrid.Children.Add(Pic);
-                
+
+                // set re-roll buttons
+                Image Pic2 = new Image();
+                BitmapImage tempBMP2 = new BitmapImage();
+                tempBMP2.UriSource = new Uri("ms-appx:///Assets/Icons/Dice-Black-64.png");
+                Pic2.Source = tempBMP2;
+                Grid.SetColumn(Pic2, 1);
+                Grid.SetRow(Pic2, x);
+                Pic2.HorizontalAlignment = HorizontalAlignment.Left;
+                Pic2.VerticalAlignment = VerticalAlignment.Center;
+                AttributesGrid.Children.Add(Pic2);
+
                 // set text
                 TextBlock AttrText = new TextBlock();
                 AttrText.Text = s;
                 AttrText.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                Grid.SetColumn(AttrText, 1);
+                Grid.SetColumn(AttrText, 2);
                 Grid.SetRow(AttrText, x);
                 AttrText.VerticalAlignment = VerticalAlignment.Center;
                 //AttributesGrid.Children.Add(Attributes[x++]);
@@ -292,7 +304,7 @@ namespace GrimoireCharacterCreator
                 AttrVal.Text = "0";
                 AttrVal.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
                 AttrVal.TextAlignment = TextAlignment.Right;
-                Grid.SetColumn(AttrVal, 2);
+                Grid.SetColumn(AttrVal, 3);
                 Grid.SetRow(AttrVal, x);
                 AttrVal.VerticalAlignment = VerticalAlignment.Center;
                 AttributesGrid.Children.Add(AttrVal);
