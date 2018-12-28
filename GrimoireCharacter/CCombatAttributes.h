@@ -19,12 +19,15 @@ typedef enum _eWeaponClasses
 	eWeaponClasses_Illegal,
 
 	eWeaponClasses_Piercing,
+	eWeaponClasses_TwoHandedPiercing,
 	eWeaponClasses_Slashing,
-	eWeaponClasses_TwoHanded,
+	eWeaponClasses_TwoHandedSlashing,
 	eWeaponClasses_Blunt,
+	eWeaponClasses_TwoHandedBlunt,
 	eWeaponClasses_Ranged,
 	eWeaponClasses_Snare,
-	eWeaponClasses_Entrap,
+
+	eWeaponClasses_Throw,
 
 	eWeaponClasses_Max
 } eWeaponClasses;
@@ -39,10 +42,14 @@ private:
 	int				m_iBaseArmorClass;
 	int				m_iAdjustedArmorClass;
 	int				m_iAdjustedDexterity;
+	int				m_iAdjustedWeight;
 
-	int				m_iAttack;
-	int				m_iDefense;
-	int				m_iDamage;
+	int				m_iAttack;		// base attack value
+	int				m_iDefense;		// base defense value
+	int				m_iDamage;		
+
+	// array of each weapon skill type to track the skill in that category
+	int				m_iSkillLevel[eWeaponClasses_Max];	
 
 	eWeaponClasses	m_ePrimaryWeaponClass;
 	eWeaponClasses	m_eSecondaryWeaponClass;
@@ -56,6 +63,7 @@ protected:
 	void	SetBaseArmorClass(int _iBaseAC)						{ m_iBaseArmorClass = _iBaseAC; }
 	void	SetAdjustedArmorClass(int _iAdjustedAC)				{ m_iAdjustedArmorClass = _iAdjustedAC; }
 	void	SetAdjustedDexterity(int _iAdjustedDex)				{ m_iAdjustedDexterity = _iAdjustedDex; }
+	void	SetAdjustedWeight(int _iAdjustedWeight)				{ m_iAdjustedWeight = _iAdjustedWeight; }
 
 	void	SetPrimaryWeaponClass(eWeaponClasses _eWeapClass)	{ m_ePrimaryWeaponClass = _eWeapClass; }
 	void	SetSecondaryWeaponClass(eWeaponClasses _eWeapClass) { m_eSecondaryWeaponClass = _eWeapClass; }
@@ -71,6 +79,7 @@ public:
 	int				GetBaseArmorClass() const		{ return m_iBaseArmorClass; }
 	int				GetAdjustedArmorClass() const	{ return m_iAdjustedArmorClass; }
 	int				GetAdjustedDexterity() const	{ return m_iAdjustedDexterity; }
+	int				GetAdjustedWeight() const		{ return m_iAdjustedWeight; }
 
 	eWeaponClasses	GetPrimaryWeaponClass() const	{ return m_ePrimaryWeaponClass; }
 	eWeaponClasses	GetSecondaryWeaponClass() const { return m_eSecondaryWeaponClass; }

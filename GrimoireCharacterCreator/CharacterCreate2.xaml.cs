@@ -23,6 +23,10 @@ namespace GrimoireCharacterCreator
     /// </summary>
     public sealed partial class CharacterCreate2 : Page
     {
+        Random Rand = new Random();
+
+        TextBlock[] AttribVals = new TextBlock[10];
+
         string[] AttributeStrings = 
         {
                 "Strength",
@@ -50,11 +54,208 @@ namespace GrimoireCharacterCreator
         {
             Frame.Navigate(typeof(CharacterCreate1));
         }
+        private async void Button_ReRoll_Clock(Object sender, RoutedEventArgs e)
+        {
+            CalculateAllAttributes();
+        }
+        private async void InFocus(Object sender, RoutedEventArgs e)
+        {
+            //ReRoll.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+        }
+        private async void OutFocus(Object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        private int RollD20()
+        {
+            return Rand.Next(1, 20);
+        }
+        private int RollD12()
+        {
+            return Rand.Next(1, 12);
+        }
+        private int RollD10()
+        {
+            return Rand.Next(1, 10);
+        }
+        private int RollD8()
+        {
+            return Rand.Next(1, 8);
+        }
+        private int RollD6()
+        {
+            return Rand.Next(1, 6);
+        }
+        private int RollD4()
+        {
+            return Rand.Next(1, 4);
+        }
+
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Constitution Stamina
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceStaminaModifier()
+        {
+            return 0;
+        }
+        private int Calculate_Stamina()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceStaminaModifier());
+        }
+
+
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Constitution Calculations
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceSwimmingModifier()
+        {
+            return 0;
+        }
+        private int Calculate_Swimming()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceSwimmingModifier());
+        }
+
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Constitution Calculations
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceConstitutionModifier()
+        {
+            return 0;
+        }
+        private int Calculate_Constitution()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceConstitutionModifier());
+        }
+
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Wisdom Calculations
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceWisdomModifier()
+        {
+            return 0;
+        }
+        private int Calculate_Wisdom()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceWisdomModifier());
+        }
+
+
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Intelligence Calculations
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceCharismaModifier()
+        {
+            return 0;
+        }
+        private int Calculate_Charisma()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceCharismaModifier());
+        }
+
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Intelligence Calculations
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceEgoModifier()
+        {
+            return 0;
+        }
+        private int Calculate_Ego()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceEgoModifier());
+        }
+
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Intelligence Calculations
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceAgilityModifier()
+        {
+            return 0;
+        }
+        private int Calculate_Agility()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceAgilityModifier());
+        }
+
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Dexterity Calculations
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceDexterityModifier()
+        {
+            return 0;
+        }
+        private int Calculate_Dexterity()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceDexterityModifier());
+        }
+
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Intelligence Calculations
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceIntelligenceModifier()
+        {
+            return 0;
+        }
+        private int Calculate_Intelligence()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceIntelligenceModifier());
+        }
+         
+         
+         
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        /// Strength Calculations
+        /// ////////////////////////////////////////////////////////////////////////////////////
+        private int GetRaceStrengthModifier()
+        {
+            return 0;
+        }
+
+        private int Calculate_Strength()
+        {
+            return (RollD6() + RollD6() + RollD6() + GetRaceStrengthModifier());
+        }
+
+
+        private async void CalculateAllAttributes()
+        {
+            int Str = Calculate_Strength();
+            AttribVals[0].Text = Str.ToString();
+
+            int Int = Calculate_Intelligence();
+            AttribVals[1].Text = Int.ToString();
+
+            int Wis = Calculate_Wisdom();
+            AttribVals[2].Text = Wis.ToString();
+
+            int Cha = Calculate_Charisma();
+            AttribVals[3].Text = Cha.ToString();
+
+            int Ego = Calculate_Ego();
+            AttribVals[4].Text = Ego.ToString();
+
+            int Agi = Calculate_Agility();
+            AttribVals[5].Text = Agi.ToString();
+
+            int Con = Calculate_Constitution();
+            AttribVals[6].Text = Con.ToString();
+
+            int Dex = Calculate_Dexterity();
+            AttribVals[7].Text = Dex.ToString();
+
+            int Sta = Calculate_Stamina();
+            AttribVals[8].Text = Sta.ToString();
+
+            int Swi = Calculate_Swimming();
+            AttribVals[9].Text = Swi.ToString();
+        }
 
         private async void CreateAttributesTable()
         {
             int x = 0;
-            TextBlock[] Attributes = new TextBlock[10];   
+            //TextBlock[] Attributes = new TextBlock[10];   
             foreach(string s in AttributeStrings)
             {
                 //Attributes[x] = new TextBlock();
@@ -95,8 +296,11 @@ namespace GrimoireCharacterCreator
                 Grid.SetRow(AttrVal, x);
                 AttrVal.VerticalAlignment = VerticalAlignment.Center;
                 AttributesGrid.Children.Add(AttrVal);
+                AttribVals[x] = AttrVal;
                 x++;
             }
+
+            CalculateAllAttributes();
         }
     }
 }
