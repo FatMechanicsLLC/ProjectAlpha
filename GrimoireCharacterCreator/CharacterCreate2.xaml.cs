@@ -71,19 +71,19 @@ namespace GrimoireCharacterCreator
 
         private int RollD20()
         {
-            return Rand.Next(1, 20);
+            return Rand.Next(1, 21);
         }
         private int RollD12()
         {
-            return Rand.Next(1, 12);
+            return Rand.Next(1, 13);
         }
         private int RollD10()
         {
-            return Rand.Next(1, 10);
+            return Rand.Next(1, 11);
         }
         private int RollD8()
         {
-            return Rand.Next(1, 8);
+            return Rand.Next(1, 9);
         }
         private int RollD6()
         {
@@ -91,7 +91,7 @@ namespace GrimoireCharacterCreator
         }
         private int RollD4()
         {
-            return Rand.Next(1, 4);
+            return Rand.Next(1, 5);
         }
 
         /// ////////////////////////////////////////////////////////////////////////////////////
@@ -253,19 +253,65 @@ namespace GrimoireCharacterCreator
             AttribVals[9].Text = Swi.ToString();
         }
 
+        private async void Calculate_IndividualAttribute(object sender, RoutedEventArgs e)
+        {
+            switch (((Button)sender).Name)
+            {
+                case "Strength" :
+                    int Str = Calculate_Strength();
+                    AttribVals[0].Text = Str.ToString();
+                    break;
+                case "Intelligence" :
+                    int Int = Calculate_Intelligence();
+                    AttribVals[1].Text = Int.ToString();
+                    break;
+                case "Wisdom" :
+                    int Wis = Calculate_Wisdom();
+                    AttribVals[2].Text = Wis.ToString();
+                    break;
+                case "Ego" :
+                    int Ego = Calculate_Ego();
+                    AttribVals[4].Text = Ego.ToString();
+                    break;
+                case "Charisma" :
+                    int Cha = Calculate_Charisma();
+                    AttribVals[3].Text = Cha.ToString();
+                    break;
+                case "Dexterity" :
+                    int Dex = Calculate_Dexterity();
+                    AttribVals[7].Text = Dex.ToString();
+                    break;
+                case "Agility" :
+                    int Agi = Calculate_Agility();
+                    AttribVals[5].Text = Agi.ToString();
+                    break;
+                case "Stamina" :
+                    int Sta = Calculate_Stamina();
+                    AttribVals[8].Text = Sta.ToString();
+                    break;
+                case "Constitution" :
+                    int Con = Calculate_Constitution();
+                    AttribVals[6].Text = Con.ToString();
+                    break;
+                case "Swimming" :
+                    int Swi = Calculate_Swimming();
+                    AttribVals[9].Text = Swi.ToString();
+                    break;
+                default:
+                    CalculateAllAttributes();
+                    break;
+            }
+        }
+
         private async void CreateAttributesTable()
         {
             int x = 0;
             //TextBlock[] Attributes = new TextBlock[10];   
             foreach(string s in AttributeStrings)
             {
-                //Attributes[x] = new TextBlock();
-                //Attributes[x].Text = s;
-                //Attributes[x].Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                //Grid.SetColumn(Attributes[x], 0);
-                //Grid.SetRow(Attributes[x], x); TextBlock AttrText = new TextBlock();
+
                 RowDefinition RowDef = new RowDefinition();
-                RowDef.Height = new GridLength(32);
+                RowDef.Height = new GridLength(48);
                 AttributesGrid.RowDefinitions.Add(RowDef);
 
                 // set icon
@@ -278,16 +324,29 @@ namespace GrimoireCharacterCreator
                 Pic.HorizontalAlignment = HorizontalAlignment.Left;
                 AttributesGrid.Children.Add(Pic);
 
-                // set re-roll buttons
-                Image Pic2 = new Image();
-                BitmapImage tempBMP2 = new BitmapImage();
-                tempBMP2.UriSource = new Uri("ms-appx:///Assets/Icons/Dice-Black-64.png");
-                Pic2.Source = tempBMP2;
-                Grid.SetColumn(Pic2, 1);
-                Grid.SetRow(Pic2, x);
-                Pic2.HorizontalAlignment = HorizontalAlignment.Left;
-                Pic2.VerticalAlignment = VerticalAlignment.Center;
-                AttributesGrid.Children.Add(Pic2);
+                Button RRBut = new Button
+                {
+                    BorderBrush = new SolidColorBrush(Windows.UI.Colors.Red),
+                    BorderThickness = new Thickness(2),
+                    Width = 48,
+                    Height = 48,
+                    Name = s,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    Content = new Image
+                    {
+                        Source = new BitmapImage(new Uri("ms-appx:///Assets/Icons/Dice-Black-64.png")),
+                        VerticalAlignment = VerticalAlignment.Center,
+                        HorizontalAlignment = HorizontalAlignment.Left,
+                        Height=32,
+                        Width=32
+                    }
+                };
+                RRBut.Click += Calculate_IndividualAttribute;
+                Grid.SetColumn(RRBut, 1);
+                Grid.SetRow(RRBut, x);
+                AttributesGrid.Children.Add(RRBut);
+                ReRollButtons[x] = RRBut;
 
                 // set text
                 TextBlock AttrText = new TextBlock();
@@ -296,7 +355,6 @@ namespace GrimoireCharacterCreator
                 Grid.SetColumn(AttrText, 2);
                 Grid.SetRow(AttrText, x);
                 AttrText.VerticalAlignment = VerticalAlignment.Center;
-                //AttributesGrid.Children.Add(Attributes[x++]);
                 AttributesGrid.Children.Add(AttrText);
 
                 // set text boxes

@@ -115,20 +115,18 @@
                     </RelativePanel>
                     <RelativePanel x:Name="AttributeBox" Height="600" Width="300" VerticalAlignment="Center" HorizontalAlignment="right"  Margin="80,50,0,0">
                         <Rectangle x:Name="AttributeBoxBackground" Height="600" Width="300" Fill="Black" />
-                        <Grid x:Name="AttributesGrid" Margin="30,30,0,0" RowSpacing="10">
+                        <Grid x:Name="AttributesGrid" Margin="20,20,0,0" RowSpacing="3" ColumnSpacing="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="45"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-              <!--              <RowDefinition Height="32"/>
-                                <RowDefinition Height="32"/>  -->
                             </Grid.RowDefinitions>
                         </Grid>
                         <Button Style="{StaticResource ReRollButton}" x:Name="ReRoll" Content="ReRoll" Click="Button_ReRoll_Clock" PointerEntered="InFocus" PointerExited="OutFocus"
-                            Height="45" Margin="50,500,0,0" Width="200" 
+                            Height="45" Margin="50,540,0,0" Width="200" 
                             BorderBrush="Red" BorderThickness="2"
                             Foreground="Red" 
                             Background="White"          />
