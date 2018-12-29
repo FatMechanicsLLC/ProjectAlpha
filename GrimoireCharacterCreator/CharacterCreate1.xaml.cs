@@ -79,10 +79,17 @@ namespace GrimoireCharacterCreator
         {
             base.OnNavigatedTo(e);
             Character = (CCharacter) e.Parameter;
+
+            if (Character.CharName != "Default")
+            {
+                NameBox.Text = Character.CharName;
+            }
         }
 
         private async void Button_Continue_Click(object sender, RoutedEventArgs e)
         {
+            // set the name
+            Character.CharName = NameBox.Text;
             Frame.Navigate(typeof(CharacterCreate2), Character);
         }
         private async void Button_Back_Click(object sender, RoutedEventArgs e)
@@ -95,10 +102,10 @@ namespace GrimoireCharacterCreator
             string szSelected = e.AddedItems[0].ToString();
             switch (szSelected)
             {
-                case "Male":        HelpBoxText.Text = Sex_Descrip_Male;        break;
-                case "Female":      HelpBoxText.Text = Sex_Descrip_Female;      break;
-                case "Both":        HelpBoxText.Text = Sex_Descrip_Both;        break;
-                case "Other":       HelpBoxText.Text = Sex_Descrip_Other;       break;
+                case "Male":        HelpBoxText.Text = Sex_Descrip_Male;    Character.CharRace = "Male";    break;
+                case "Female":      HelpBoxText.Text = Sex_Descrip_Female;  Character.CharRace = "Female";  break;
+                case "Both":        HelpBoxText.Text = Sex_Descrip_Both;    Character.CharRace = "Both";    break;
+                case "Other":       HelpBoxText.Text = Sex_Descrip_Other;   Character.CharRace = "Other";   break;
             }
         }
         private void ClassBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -106,33 +113,33 @@ namespace GrimoireCharacterCreator
             string szSelected = e.AddedItems[0].ToString();
             switch (szSelected)
             {
-                case "Thief":           HelpBoxText.Text = ThiefDescription;         break;             
-                case "Slayer":          HelpBoxText.Text = SlayerDescription;        break;
-                case "Techo":           HelpBoxText.Text = TechnoDescription;        break;
-                case "Courtesan":       HelpBoxText.Text = CourtesanDescription;     break;
-                case "Assassin":        HelpBoxText.Text = AssassinDescription;      break;
-                case "Alchemist":       HelpBoxText.Text = AlchemistDescription;     break;
-                case "Rune Weaver":     HelpBoxText.Text = RuneWeaverDescription;    break;
-                case "Saint":           HelpBoxText.Text = SaintDescription;         break;
-                case "Outlaw":          HelpBoxText.Text = OutlawDescription;        break;
-                case "Warrior":         HelpBoxText.Text = WarriorDescription;       break;
-                case "Cleric":          HelpBoxText.Text = ClericDescription;        break;
-                case "Monk":            HelpBoxText.Text = MonkDescription;          break;
-                case "Mage":            HelpBoxText.Text = MageDescription;          break;
-                case "Illusionist":     HelpBoxText.Text = IllusionistDescription;   break;
-                case "Bard":            HelpBoxText.Text = BardDescription;          break;
-                case "Druid":           HelpBoxText.Text = DruidDescription;         break;
-                case "Ranger":          HelpBoxText.Text = RangerDescription;        break;
-                case "Barbarian":       HelpBoxText.Text = BarbarianDescription;     break;
-                case "Medicine Man":    HelpBoxText.Text = MedicineManDescription;   break;
-                case "Psychic":         HelpBoxText.Text = PsychicDescription;       break;
-                case "Highway Man":     HelpBoxText.Text = HighwayManDescription;    break;
-                case "Ninja":           HelpBoxText.Text = NinjaDescription;         break;
-                case "Trader":          HelpBoxText.Text = TraderDescription;        break;
-                case "Slaver":          HelpBoxText.Text = SlaverDescription;        break;
-                case "Sage":            HelpBoxText.Text = SageDescription;          break;
-                case "Witch Hunter":    HelpBoxText.Text = WitchHunterDescription;   break;
-                case "Paladin":         HelpBoxText.Text = PaladinDescription;       break;
+                case "Thief":           HelpBoxText.Text = ThiefDescription;        Character.CharClass = "Thief";          break;             
+                case "Slayer":          HelpBoxText.Text = SlayerDescription;       Character.CharClass = "Slayer";         break;
+                case "Techo":           HelpBoxText.Text = TechnoDescription;       Character.CharClass = "Techno";         break;
+                case "Courtesan":       HelpBoxText.Text = CourtesanDescription;    Character.CharClass = "Courtesan";      break;
+                case "Assassin":        HelpBoxText.Text = AssassinDescription;     Character.CharClass = "Assassin";       break;
+                case "Alchemist":       HelpBoxText.Text = AlchemistDescription;    Character.CharClass = "Alchmist";       break;
+                case "Rune Weaver":     HelpBoxText.Text = RuneWeaverDescription;   Character.CharClass = "Rune Weaver";    break;
+                case "Saint":           HelpBoxText.Text = SaintDescription;        Character.CharClass = "Saint";          break;
+                case "Outlaw":          HelpBoxText.Text = OutlawDescription;       Character.CharClass = "Outlaw";         break;
+                case "Warrior":         HelpBoxText.Text = WarriorDescription;      Character.CharClass = "Warrior";        break;
+                case "Cleric":          HelpBoxText.Text = ClericDescription;       Character.CharClass = "Cleric";         break;
+                case "Monk":            HelpBoxText.Text = MonkDescription;         Character.CharClass = "Monk";           break;
+                case "Mage":            HelpBoxText.Text = MageDescription;         Character.CharClass = "Mage";           break;
+                case "Illusionist":     HelpBoxText.Text = IllusionistDescription;  Character.CharClass = "Illusionist";    break;
+                case "Bard":            HelpBoxText.Text = BardDescription;         Character.CharClass = "Bard";           break;
+                case "Druid":           HelpBoxText.Text = DruidDescription;        Character.CharClass = "Druid";          break;
+                case "Ranger":          HelpBoxText.Text = RangerDescription;       Character.CharClass = "Ranger";         break;
+                case "Barbarian":       HelpBoxText.Text = BarbarianDescription;    Character.CharClass = "Barbarian";      break;
+                case "Medicine Man":    HelpBoxText.Text = MedicineManDescription;  Character.CharClass = "Medicine Man";   break;
+                case "Psychic":         HelpBoxText.Text = PsychicDescription;      Character.CharClass = "Psychic";        break;
+                case "Highway Man":     HelpBoxText.Text = HighwayManDescription;   Character.CharClass = "Highway Man";    break;
+                case "Ninja":           HelpBoxText.Text = NinjaDescription;        Character.CharClass = "Ninja";          break;
+                case "Trader":          HelpBoxText.Text = TraderDescription;       Character.CharClass = "Trader";         break;
+                case "Slaver":          HelpBoxText.Text = SlaverDescription;       Character.CharClass = "Slaver";         break;
+                case "Sage":            HelpBoxText.Text = SageDescription;         Character.CharClass = "Sage";           break;
+                case "Witch Hunter":    HelpBoxText.Text = WitchHunterDescription;  Character.CharClass = "Witch Hunter";   break;
+                case "Paladin":         HelpBoxText.Text = PaladinDescription;      Character.CharClass = "Paladin";        break;
             }
         }
 

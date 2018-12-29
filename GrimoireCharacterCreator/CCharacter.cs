@@ -22,5 +22,6 @@ namespace GrimoireCharacterCreator
         public int CharAgi = 0;
         public int CharEgo = 0;
         public int CharSwm = 0;
+        public int CharSta = 0;
     }
 }
