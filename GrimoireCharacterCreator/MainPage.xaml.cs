@@ -41,7 +41,8 @@ namespace GrimoireCharacterCreator
         }
         private async void CreateCharacter_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(CharacterCreate1));
+
+            Frame.Navigate(typeof(CharacterCreate1), new CCharacter());
         }
     }
 

@@ -22,6 +22,9 @@ namespace GrimoireCharacterCreator
     /// </summary>
     sealed partial class App : Application
     {
+
+        Random Rand = new Random();
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -96,6 +99,32 @@ namespace GrimoireCharacterCreator
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+
+        public int RollD20()
+        {
+            return Rand.Next(1, 21);
+        }
+        public int RollD12()
+        {
+            return Rand.Next(1, 13);
+        }
+        public int RollD10()
+        {
+            return Rand.Next(1, 11);
+        }
+        public int RollD8()
+        {
+            return Rand.Next(1, 9);
+        }
+        public int RollD6()
+        {
+            return Rand.Next(1, 7);
+        }
+        public int RollD4()
+        {
+            return Rand.Next(1, 5);
         }
     }
 }

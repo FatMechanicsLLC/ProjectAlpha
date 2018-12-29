@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<General>
+  Name="Default"
+  Class="Default"
+  Race="Default"
+  Sex="Default"
+</General>
+
+<Attributes>
+  Strength=0
+  Intelligence=0
+  Wisdom=0
+  Charisma=0
+  Stamina=0
+  Dexterity=0
+  Agility=0
+  Swimming=0
+  Constiution=0
+  Ego=0
+</Attributes>

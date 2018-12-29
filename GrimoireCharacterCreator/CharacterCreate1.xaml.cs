@@ -64,6 +64,8 @@ namespace GrimoireCharacterCreator
         private string Race_Dwarf = "Dwarf";
         private string Race_Human = "Human";
 
+        CCharacter Character;
+
         public CharacterCreate1()
         {
             this.InitializeComponent();
@@ -72,13 +74,20 @@ namespace GrimoireCharacterCreator
             PopulateSexList();
 
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            Character = (CCharacter) e.Parameter;
+        }
+
         private async void Button_Continue_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(CharacterCreate2));
+            Frame.Navigate(typeof(CharacterCreate2), Character);
         }
         private async void Button_Back_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            Frame.Navigate(typeof(MainPage), Character);
         }
 
         private void SexBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

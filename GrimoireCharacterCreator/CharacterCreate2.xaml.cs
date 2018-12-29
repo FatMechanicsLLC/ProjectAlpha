@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace GrimoireCharacterCreator
@@ -23,7 +24,10 @@ namespace GrimoireCharacterCreator
     /// </summary>
     public sealed partial class CharacterCreate2 : Page
     {
-        Random Rand = new Random();
+        // moved to global instance
+        //Random Rand = new Random();
+
+        CCharacter Character;
 
         TextBlock[] AttribVals = new TextBlock[10];
         Button[] ReRollButtons = new Button[10];
@@ -68,30 +72,41 @@ namespace GrimoireCharacterCreator
 
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            Character = (CCharacter)e.Parameter;
+        }
 
         private int RollD20()
         {
-            return Rand.Next(1, 21);
+            //return Rand.Next(1, 21);
+            return CDiceRoller.RollD20();
         }
         private int RollD12()
         {
-            return Rand.Next(1, 13);
+            //return Rand.Next(1, 13);
+            return CDiceRoller.RollD12();
         }
         private int RollD10()
         {
-            return Rand.Next(1, 11);
+            //return Rand.Next(1, 11);
+            return CDiceRoller.RollD10();
         }
         private int RollD8()
         {
-            return Rand.Next(1, 9);
+            //return Rand.Next(1, 9);
+            return CDiceRoller.RollD8();
         }
         private int RollD6()
         {
-            return Rand.Next(1, 7);
+            return CDiceRoller.RollD6();
+            //return Rand.Next(1, 7);
         }
         private int RollD4()
         {
-            return Rand.Next(1, 5);
+            //return Rand.Next(1, 5);
+            return CDiceRoller.RollD4();
         }
 
         /// ////////////////////////////////////////////////////////////////////////////////////
