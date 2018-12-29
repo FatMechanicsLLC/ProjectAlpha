@@ -57,6 +57,17 @@ namespace GrimoireCharacterCreator
         }
         private async void Button_Back_Click(object sender, RoutedEventArgs e)
         {
+            Character.CharStr = Convert.ToInt32(AttribVals[0].Text);
+            Character.CharInt = Convert.ToInt32(AttribVals[1].Text);
+            Character.CharWis = Convert.ToInt32(AttribVals[2].Text);
+            Character.CharCha = Convert.ToInt32(AttribVals[3].Text);
+            Character.CharEgo = Convert.ToInt32(AttribVals[4].Text);
+            Character.CharAgi = Convert.ToInt32(AttribVals[5].Text);
+            Character.CharCon = Convert.ToInt32(AttribVals[6].Text);
+            Character.CharDex = Convert.ToInt32(AttribVals[7].Text);
+            Character.CharSta = Convert.ToInt32(AttribVals[8].Text);
+            Character.CharSwm = Convert.ToInt32(AttribVals[9].Text);
+
             Frame.Navigate(typeof(CharacterCreate1), Character);
         }
         private async void Button_ReRoll_Clock(Object sender, RoutedEventArgs e)
