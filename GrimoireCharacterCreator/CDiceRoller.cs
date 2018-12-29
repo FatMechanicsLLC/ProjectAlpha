@@ -34,5 +34,5 @@ namespace GrimoireCharacterCreator
         {
             return Rand.Next(1, 5);
         }
-    }
+    } 
 }
