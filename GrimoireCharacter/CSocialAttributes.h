@@ -72,6 +72,17 @@ class CSocialAttributes
 	friend CCharacter;
 
 private:
+	std::string		m_Name;
+	std::string		m_FathersName;
+	std::string		m_MothersName;
+	std::string		m_FamilyName;
+	std::string		m_FirstChildName;
+	std::string		m_SecondChildName;
+	std::string		m_ThirdChildName;
+	std::string		m_FourthChildName;
+	std::string		m_FifthChildName;
+	std::string		m_SixthChildName;
+
 	eMaritalStatus	m_eMaritalStatus;
 	eSocialRank		m_eParentsRank;
 	eSocialRank		m_eSiblingsRank;

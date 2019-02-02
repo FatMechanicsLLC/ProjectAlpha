@@ -88,22 +88,20 @@ namespace GrimoireCharacterCreator
             base.OnNavigatedTo(e);
             Character = (CCharacter)e.Parameter;
 
-            if ( Character.CharName != "Default")
+            if (Character.CharStr != 0)
             {
-                if (Character.CharStr != 0)
-                {
-                    AttribVals[0].Text = Character.CharStr.ToString();
-                    AttribVals[1].Text = Character.CharInt.ToString();
-                    AttribVals[2].Text = Character.CharWis.ToString();
-                    AttribVals[3].Text = Character.CharCha.ToString();
-                    AttribVals[4].Text = Character.CharEgo.ToString();
-                    AttribVals[5].Text = Character.CharAgi.ToString();
-                    AttribVals[6].Text = Character.CharCon.ToString();
-                    AttribVals[7].Text = Character.CharDex.ToString();
-                    AttribVals[8].Text = Character.CharSta.ToString();
-                    AttribVals[9].Text = Character.CharSwm.ToString();
-                }
+                AttribVals[0].Text = Character.CharStr.ToString();
+                AttribVals[1].Text = Character.CharInt.ToString();
+                AttribVals[2].Text = Character.CharWis.ToString();
+                AttribVals[3].Text = Character.CharCha.ToString();
+                AttribVals[4].Text = Character.CharEgo.ToString();
+                AttribVals[5].Text = Character.CharAgi.ToString();
+                AttribVals[6].Text = Character.CharCon.ToString();
+                AttribVals[7].Text = Character.CharDex.ToString();
+                AttribVals[8].Text = Character.CharSta.ToString();
+                AttribVals[9].Text = Character.CharSwm.ToString();
             }
+
         }
 
         private int RollD20()

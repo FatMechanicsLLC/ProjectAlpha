@@ -94,7 +94,10 @@ namespace GrimoireCharacterCreator
         }
         private async void Button_Back_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage), Character);
+            // ditch the old character, since going back to landing page
+            // consider that a start over
+            Character = null;
+            Frame.Navigate(typeof(MainPage), null);
         }
 
         private void SexBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
